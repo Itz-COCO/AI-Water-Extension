@@ -3,18 +3,18 @@ A Chrome browser extension that tracks the hidden water cost of your AI usage in
 
 What Does It Do?
 Every AI query uses water — from cooling servers to powering data centers. This extension makes that invisible cost **visible** by:
-- Showing a *floating badge* on AI websites (ChatGPT, Claude, Gemini, Grok, Kimi, Meta AI, Manus) with your water cost per query
-- Providing a *quick calculator* in the popup to estimate water usage for any number of queries
--  Tracking your daily, weekly, and monthly water footprint
-- Showing how much water you *saved* by choosing efficient models over GPT-4
-- Logging every calculation in a *daily tracker*
-- Delivering *cheeky reminders* about your digital water habits
+- Showing a **floating badge** on AI websites (ChatGPT, Claude, Gemini, Grok, Kimi, Meta AI, Manus) with your water cost per query
+- Providing a **quick calculator** in the popup to estimate water usage for any number of queries
+-  **Tracking** your daily, weekly, and monthly water footprint
+- Showing how much water you **saved** by choosing efficient models over GPT-4
+- Logging every calculation in a **daily tracker**
+- Delivering **cheeky reminders** about your digital water habits
 
 How to Install
 1. Download or clone this repository
 2. Open Chrome and go to `chrome://extensions/`
-3. Enable *Developer mode* (toggle in the top-right)
-4. Click *Load unpacked* and select the `ai-water-extension` folder
+3. Enable **Developer mode** (toggle in the top-right)
+4. Click **Load unpacked** and select the `ai-water-extension` folder
 5. Pin the extension to your toolbar
 
 That's it — the extension will now show water badges on supported AI websites and track your usage.
@@ -64,10 +64,7 @@ Tech Stack
 
 Project Context
 This extension is part of a series of projects addressing the hidden environmental cost of AI. The companion web-based [AI Water Footprint Calculator](https://itz-coco.github.io/AI-WATER-FOOTPRINT/) provides a more detailed breakdown with visualizations and comparisons.
-
-Built as a submission for *StarDance 2026* and as groundwork for *The Earth Prize 2027*.
+Built as a submission for **StarDance 2026** and as groundwork for **The Earth Prize 2027**.
 
 License
 MIT License. 
-Made with 💧 and a lot of determination.
-
