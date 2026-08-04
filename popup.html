@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+        <title>AI Water Footprint</title>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+            body {
+                width: 360px;
+                min-height: 580px;
+                font-family: 'Nunito' , Arial, sans-serif;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: #fff;
+                padding: 20px;
+                border-radius: 16px;
+            }
+            h2 {
+                font-family: 'Fredoka One', cursive;
+                font-size: 1.4rem;
+                margin-bottom: 2px;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            }
+            .subtitle {
+                font-size: 0.8rem;
+                opacity: 0.85;
+                margin-bottom: 18px;
+            }
+            .mascot {
+                text-align: center;
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+                animation: bounce 2s infinite;
+            }
+            @keyframes bounce {
+                0%, 100% { transform:
+                translateY(0); }
+                50% { transform:
+                translateY(-6px); }
+            }
+            .stats-row {
+                display: flex;
+                gap: 8px;
+                margin-bottom: 12px;
+            }
+            .stat-box {
+                background: rgba(255,255,255,0.15);
+                border-radius: 14px;
+                backdrop-filter: blur(10px);
+                padding: 12px 8px;
+                text-align: center;
+                flex: 1;
+                border: 1px solid rgba(255,255,255,0.2);
+                transition: transform 0.2s;
+           }
+           .stat-box:hover {
+            transform: scale(1.05);
+           }
+           .stat-box h3 {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 4px;
+           }
+           .stat-box .number {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.6rem;
+            color: #ffd700;
+           }
+           .stat-box .unit {
+            font-size: 0.7rem;
+            opacity: 0.7;
+           }
+           .saved-box {
+            background: rgba(74, 222, 128, 0.2);
+            border: 1px solid rgba(74, 222, 128, 0.4);
+            border-radius: 14px;
+            padding: 12px;
+            text-align: center;
+            margin-bottom: 15px;
+           }
+           .saved-box h3{
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 4px;
+           }
+           .saved-box .number {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.5rem;
+            color: #4ade80;
+           }
+           .quick-calc {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 14px;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            margin-bottom: 15px;
+           }
+           .quick-calc label {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+           }
+           .quick-calc select, .quick-calc input {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 0.85rem;
+            font-family: 'Nunito', sans-serif;
+            margin-bottom: 10px;
+            outline: none;
+           }
+           .quick-calc
+           select:focus, .quick-calc input:focus{
+            border-color:#ffd700;
+           }
+           .quick-calc select option {
+            background: #764ba2;
+            color:#fff;
+           }
+           .quick-calc button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #ffd700, #ffaa00);
+            color: #1a1a2e;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Fredoka One', cursive;
+            transition: transform 0.15s, box-shadow 0.15s;
+           }
+           .quick-calc button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+           }
+           .quick-calc button:active {
+            transform: scale(0.97);
+           }
+           .result-text {
+            font-family: 'Fredoka One', cursive;
+            text-align: center;
+            font-size: 1.3rem;
+            margin-top: 10px;
+            color: #ffd700;
+           }
+           .saved-text {
+            text-align: center;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            color: #4ade80;
+           }
+           .tracker-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 14px;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            margin-bottom: 15px;
+           }
+           .tracker-section h3 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            color: #ffd700;
+           }
+           .tracker-list {
+            max-height: 100px;
+            overflow-y: auto;
+            font-size: 0.75rem;
+           }
+           .tracker-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+           }
+           .tracker-item:last-child {
+            border-bottom: none;
+           }
+           .btn-clear {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            background: transparent;
+            color: #ff6b6b;
+            border: 1px solid #ff6b6b;
+            border-radius: 0.75rem;
+            font-family: 'Nunito', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s;
+           }
+           .btn-clear:hover {
+            background: #ff6b6b;
+            color: #fff;
+           }
+           .cheeky-remark {
+            text-align: center;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+            padding: 10px;
+            margin-top: 5px;
+            min-height: 30px;
+           }
+           .footer-link {
+            text-align: center;
+            margin-top: 10px;
+           }
+           .footer-link a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.75rem;
+            text-decoration: none;
+           }
+           .footer-link a:hover {
+            color: #ffd700;
+           }
+        </style>
+    </head>
+    <body>
+        <div class="mascot">🐬💧</div>
+        <h2>AI Water Footprint</h2>
+        <p class="subtitle">👉Your AI water usage dashboard👈</p>
+        <div class="stats-row">
+            <div class="stat-box">
+                <h3>Today</h3>
+                <div class="number" id="today-water">0</div>
+                <div class="unit">ml</div>
+            </div>
+            <div class="stat-box">
+                <h3>This Week</h3>
+                <div class="number" id="week-water">0</div>
+                <div class="unit">ml</div>
+            </div>
+            <div class="stat-box">
+                <h3>This Month</h3>
+                <div class="number" id="month-water">0</div>
+                <div class="unit">ml</div>
+            </div>
+        </div>
+        <div class="saved-box">
+            <h3>The Water You Saved This Month</h3>
+            <div class="number" id="month-saved">0</div>
+            <div class="unit">ml saved vs GPT-4</div>
+        </div>
+        <div class="quick-calc">
+            <label>Quick Calculate</label>
+            <select id="popup-provider">
+                <option value="gpt4">ChatGPT(GPT-4)</option>
+                <option value="claude-opus">Claude(Opus)</option>
+                <option value="gemini">Gemini(Advanced)</option>
+                <option value="gpt3.5">ChatGPT(GPT-3.5)</option>
+                <option value="claude-haiku">Claude(Haiku)</option>
+                <option value="grok">Grok(xAI)</option>
+                <option value="kimi">Kimi(Moonshot)</option>
+                <option value="meta-ai">Meta AI</option>
+                <option value="manus">Manus</option>
+                <option value="local">Local AI(LLaMA)</option>
+            </select>
+            <input type="number" id="popup-queries" placeholder="Number of queries">
+            <button id="calcBtn">Calculate</button>
+            <div class="result-text" id="popup-result"></div>
+            <div class="saved-text" id="popup-saved"></div>
+        </div>
+        <div class="tracker-section">
+            <h3>📒Today's Log</h3>
+            <div class="tracker-list" id="trackerList">
+                <p style="color: rgba(255, 255, 255, 0.5); 
+                font-size: 0.75rem; text-align: center;">No data yet 🤷‍♂️. Start calculating!</p>
+             </div>
+             <button class="btn-clear" id="clearBtn">Clear All Data</button>
+             </div>
+             <div class="cheeky-remark" id="cheekyRemark">Loading you up for mindset reconstrunction...</div>
+             <div class="footer-link">
+                <a href="https://itz-coco.github.io/AI-WATER-FOOTPRINT/" target="_blank">View Full Calculator 🫴</a>
+             </div>
+             <script src="popup.js"></script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name":  "AI Water Footprint Tracker",
+    "version": "1.0",
+    "description": "Track and visualize the hidden water cost of your AI usage across providers. Yes gng they ain't listing it in plain sight buh dw kid I've done the sourcing myself, trust.",
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://chat.openai.com/*",
+                "https://claude.ai/*",
+                "https://gemini.google.com/*",
+                "https://gemini.google.com/app/*",
+                "https://grok.x.ai/*",
+                "https://x.com/i/grok/*",
+                "https://kimi.moonshot.cn/*",
+                "https://www.meta.ai/*",
+                "https://manus.im/*"
+            ],
+            "js": ["content.js"],
+            "css": ["content.css"]
+        }
+    ],
+    "permissions": ["storage"]
+}

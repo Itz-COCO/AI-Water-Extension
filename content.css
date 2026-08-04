@@ -1,0 +1,54 @@
+.ai-water-badge {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 220px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    z-index: 999999;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    cursor: move;
+    user-select: none;
+    transition: transform 0.2s;
+}
+.ai-water-badge:hover {
+    transform: scale(1.02);
+}
+.ai-water-badge-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.ai-water-badge-icon {
+    font-size: 1.3rem;
+}
+.ai-water-badge-title {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #ffd700;
+}
+.ai-water-badge-body {
+    font-size: 0.75rem;
+}
+.ai-water-badge-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+}
+.ai-water-badge-label {
+    opacity: 0.8;
+    font-size: 0.7rem;
+}
+.ai-water-badge-value {
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+.ai-water-badge-value.saved {
+    color: #4ade80;
+}
